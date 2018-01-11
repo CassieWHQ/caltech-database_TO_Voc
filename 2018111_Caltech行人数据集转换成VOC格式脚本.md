@@ -13,7 +13,7 @@ grammar_cjkRuby: true
 
 ### 下载转换脚本
 
-
+``` haskell
 |-- caltech-database
     |-- data
 	    |-- seq                下载好解压后的 .seq 文件，set00~set05
@@ -24,7 +24,7 @@ grammar_cjkRuby: true
 	    |-- seq2jpgs.py
 		|-- vbb2voc.py
 		|-- convert_caltech.py 运行这个可以同时生成jpg和xml文件。
-
+```
 
 		
 ### 使用脚本
