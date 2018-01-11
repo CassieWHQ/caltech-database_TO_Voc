@@ -1,0 +1,13 @@
+import seq2jpg
+import vbb2voc
+
+# 
+
+seq_inputdir = "data/seq"         # input .seq file          seq/set00/V000.seq V001.seq  and so on...
+vbb_inputdir = "data/annotations" # input annotation file    annotation/set00/V000.vbb V001.vbb and so on...
+seq_outputdir = "data/img_file"   # store the jpg file       img_file/set00/V000 V001  and so on...
+vbb_outputdir = "data/xml_file"   # store the xml file       xml_file/set00/V000 V001  and so on ... 
+
+seq2jpg.seq2jpg_main(seq_inputdir,seq_outputdir)
+vbb2voc.vbb2voc_main(seq_inputdir,vbb_inputdir,seq_outputdir,vbb_outputdir)
+
