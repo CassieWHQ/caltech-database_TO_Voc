@@ -1,4 +1,4 @@
----
+00000000---
 title: 2018111_Caltech行人数据集转换成VOC格式脚本 
 grammar_cjkRuby: true
 ---
@@ -17,22 +17,22 @@ grammar_cjkRuby: true
 |-- caltech-database
     |-- data
 	    |-- seq                下载好解压后的 .seq 文件，set00~set05
-		|-- annotations        标注文件 .vbb  ，set00~set05
-		|-- img_file           存储处理好的jpg图像，可以没有，自动生成
-		|-- xml_file           存储处理好的xml文件，可以没有，自动生成
-	|-- scripts                转换用的脚本文件
+	    |-- annotations        标注文件 .vbb  ，set00~set05
+	    |-- img_file           存储处理好的jpg图像，可以没有，自动生成
+	    |-- xml_file           存储处理好的xml文件，可以没有，自动生成
+    |-- scripts                转换用的脚本文件
 	    |-- seq2jpgs.py
-		|-- vbb2voc.py
-		|-- convert_caltech.py 运行这个可以同时生成jpg和xml文件。
+	    |-- vbb2voc.py
+	    |-- convert_caltech.py 运行这个可以同时生成jpg和xml文件。
 ```
 
 		
 ### 使用脚本
 在 caltech-database目录下执行convert_caltech.py文件
 
-``` stylus
-lalala@ubuntu : ~/caltech-database$python ./scripts/convert_caltech.py
-```
+
+>lalala@ubuntu : ~/caltech-database$python ./scripts/convert_caltech.py
+
 然后在上述的 img_file 文件夹和 xml_file 文件夹里就可以看到相应的文件了
 
 ### 如需要更改
