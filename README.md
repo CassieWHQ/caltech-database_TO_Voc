@@ -1,7 +1,3 @@
-00000000---
-title: 2018111_Caltech行人数据集转换成VOC格式脚本 
-grammar_cjkRuby: true
----
 
 ### 下载Caltech 格式数据集
 数据集地址：http://www.vision.caltech.edu/Image_Datasets/CaltechPedestrians/datasets/USA/
@@ -23,7 +19,8 @@ grammar_cjkRuby: true
     |-- scripts                转换用的脚本文件
 	    |-- seq2jpgs.py
 	    |-- vbb2voc.py
-	    |-- convert_caltech.py 运行这个可以同时生成jpg和xml文件。
+	    |-- convert_caltech.py 运行这个可以同时生成jpg和xml文件。
+    |--compare_and_gap.py      
 ```
 
 		
@@ -31,13 +28,16 @@ grammar_cjkRuby: true
 在 caltech-database目录下执行convert_caltech.py文件
 
 
->lalala@ubuntu : ~/caltech-database$python ./scripts/convert_caltech.py
+>whq@ubuntu : ~/caltech-database$python ./scripts/convert_caltech.py
 
 然后在上述的 img_file 文件夹和 xml_file 文件夹里就可以看到相应的文件了
 
 ### 如需要更改
 在convert_caltech.py 文件中可以修改文件输入和输出的路径。
 seq2jgp.py 文件包含.seq 文件转化jpg 文件的代码，vbb2voc.py 文件中包含.vbb文件转化为.xml 文件的代码。
+
+### 删除无行人图片和间隔帧
+挑选出行人比较多的几个长视频片段，对上一步得到图片序列和标注文件序列进行匹配（没有行人的帧不会生成对应的标注文件，检查jpg和xml文件是否对应，删除没有行人的图像）。因为相近的帧目标很相似，设定间隔 gap 取用图片和标注。
 
 
 
